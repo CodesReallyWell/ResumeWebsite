@@ -18,23 +18,10 @@ const ImgWrapper = styled.div`
 const MainPage = () => {
   const location = useLocation()
   return (
-    <div
-      style={{
-        backgroundColor: '#1f67b1',
-        width: '100%',
-        height: '100vw'
-      }}>
+    <div>
         <div>
           <AppNavBar activeRoute={location.pathname}></AppNavBar>
         </div>
-        <ImgWrapper>
-          <img SRC={require("../Data/smiley.jpg")}></img>
-            <TextWrapper>
-            <p>
-              Liam Newton
-            </p>
-            </TextWrapper>
-        </ImgWrapper>
     </div>
   )
 }

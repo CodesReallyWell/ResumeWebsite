@@ -5,7 +5,6 @@ import Projects from './Pages/Projects'
 import MainPage from './Pages/MainPage'
 import Contact from './Pages/Contact'
 import { BrowserRouter, Route } from 'react-router-dom'
-import {Helmet} from 'react-helmet'
 
 const App = () => {
   return (

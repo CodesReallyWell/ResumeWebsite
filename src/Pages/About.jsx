@@ -1,10 +1,14 @@
 import React from "react"
 import styled from 'styled-components'
+import AppNavBar from "../Components/AppNavBar";
+import { useLocation } from "react-router-dom"
+
 
 const TextWrapper = styled.div`
   text-align: center;
   margin: auto;
   max-width: 800px;
+  
 `
 
 const About = () => {
