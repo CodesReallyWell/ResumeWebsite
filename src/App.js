@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import About from './Pages/About'
+import Projects from './Pages/Projects'
+import MainPage from './Pages/MainPage'
+import Contact from './Pages/Contact'
+import { BrowserRouter, Route } from 'react-router-dom'
+import {Helmet} from 'react-helmet'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <BrowserRouter>
+          <Route path = "/" render = {() => <MainPage></MainPage>}/>
+          <Route path = "/about" render = {() => <About></About>}/>
+          <Route path = "/projects" render = {() => <Projects></Projects>}/>
+          <Route path = "/contact" render = {() => <Contact></Contact>}/>
+        </BrowserRouter>
+      </div>
     </div>
-  );
+  )
 }
-
 export default App;
