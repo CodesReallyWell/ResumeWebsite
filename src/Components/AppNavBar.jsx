@@ -1,13 +1,11 @@
 import React from "react"
-import { Navbar, Nav} from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown} from 'react-bootstrap'
 import styled from 'styled-components'
 
 const NavBarWrap = styled.div`
-  border-bottom: 1px solid #ccc;
-  box-shadow: 0 4px 4px #ddd;
-  background: #f4f4f4;
-  align: center;
-  width: 100%;
+  background: #000000;
+  border-bottom: 1px solid #000012;
+  box-shadow: 0 4px 4px #000011;
 `
 
 // if props.isActive is true it returns green
@@ -29,10 +27,10 @@ const AppNavBar = (props) => {
 
   return (
     <NavBarWrap>
-      <Navbar expand="lg" >
+      <Navbar expand="sm" className="navbar-dark">
         <Navbar.Brand className="app-nav-link" href="/">Liam Newton</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse>
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
             <Nav.Link className="app-nav-link" href="/about">
               <NavLinkText isActive={isActiveRoute("/about")}>About</NavLinkText>
@@ -44,7 +42,14 @@ const AppNavBar = (props) => {
               <NavLinkText isActive={isActiveRoute("/contact")}>Contact</NavLinkText>
             </Nav.Link>
           </Nav>
-        </Navbar.Collapse>
+          <Nav className = "mr-auto">
+            <NavDropdown title="For Later" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/action/3.1">Something</NavDropdown.Item>
+              <NavDropdown.Item href="/action/3.2">Something</NavDropdown.Item>
+              <NavDropdown.Item href="/action/3.3">Something</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          </Navbar.Collapse>
       </Navbar>
     </NavBarWrap>
   )
