@@ -6,6 +6,8 @@ const NavBarWrap = styled.div`
   border-bottom: 1px solid #ccc;
   box-shadow: 0 4px 4px #ddd;
   background: #f4f4f4;
+  align: center;
+  width: 100%;
 `
 
 // if props.isActive is true it returns green
@@ -28,7 +30,7 @@ const AppNavBar = (props) => {
   return (
     <NavBarWrap>
       <Navbar expand="lg" >
-        <Navbar.Brand href="/">Liam Newton</Navbar.Brand>
+        <Navbar.Brand className="app-nav-link" href="/">Liam Newton</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
           <Nav>

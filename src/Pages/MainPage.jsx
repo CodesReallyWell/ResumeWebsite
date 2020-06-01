@@ -17,13 +17,17 @@ const ImgWrapper = styled.div`
 
 const MainPage = () => {
   const location = useLocation()
-  return (
-    <div>
-        <div>
-          <AppNavBar activeRoute={location.pathname}></AppNavBar>
-        </div>
-    </div>
-  )
+  if(location.pathname == "/"){
+    return (
+      <div>
+        <AppNavBar activeRoute={location.pathname}></AppNavBar>
+        <p>{location.pathname}</p>
+      </div>
+      );
+  }else{
+    return(<AppNavBar activeRoute={location.pathname}></AppNavBar>)
+  }
+  
 }
 
 export default MainPage
