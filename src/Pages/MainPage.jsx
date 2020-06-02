@@ -13,6 +13,7 @@ const ImgWrapper = styled.div`
   margin: 16em;
   padding: 1em 10vw;
   max-width: 800px;
+
 `
 
 const MainPage = () => {
@@ -21,7 +22,6 @@ const MainPage = () => {
     return (
       <div>
         <AppNavBar activeRoute={location.pathname}></AppNavBar>
-        <p>{location.pathname}</p>
       </div>
       );
   }else{
