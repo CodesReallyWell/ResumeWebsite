@@ -1,16 +1,11 @@
 .App {
   text-align: center;
-  background: #282828;
   background-color: #282828;
   color: azure;
+  height: 100vh;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
-.navbar {
-  color: azure;
-}
-

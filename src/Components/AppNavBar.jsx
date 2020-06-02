@@ -3,7 +3,7 @@ import { Navbar, Nav, NavDropdown} from 'react-bootstrap'
 import styled from 'styled-components'
 
 const NavBarWrap = styled.div`
-  background: #000000;
+  Background-color:linear-gradient(#fff, #000);
   border-bottom: 1px solid #000012;
   box-shadow: 0 4px 4px #000011;
 `
@@ -32,14 +32,14 @@ const AppNavBar = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link className="app-nav-link" href="/ResumeWebsite/about">
-              <NavLinkText isActive={isActiveRoute("/ResumeWebsite/about")}>About</NavLinkText>
+            <Nav.Link className="app-nav-link" href="/about">
+              <NavLinkText isActive={isActiveRoute("/about")}>About</NavLinkText>
             </Nav.Link>
-            <Nav.Link className="app-nav-link" href="/ResumeWebsite/projects">
-              <NavLinkText isActive={isActiveRoute("/ResumeWebsite/projects")}>Projects</NavLinkText>
+            <Nav.Link className="app-nav-link" href="/projects">
+              <NavLinkText isActive={isActiveRoute("/projects")}>Projects</NavLinkText>
             </Nav.Link>
-            <Nav.Link className="app-nav-link" href="/ResumeWebsite/contact">
-              <NavLinkText isActive={isActiveRoute("/ResumeWebsite/contact")}>Contact</NavLinkText>
+            <Nav.Link className="app-nav-link" href="/contact">
+              <NavLinkText isActive={isActiveRoute("/contact")}>Contact</NavLinkText>
             </Nav.Link>
           </Nav>
           <Nav className = "mr-auto">

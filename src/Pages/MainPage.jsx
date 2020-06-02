@@ -17,7 +17,7 @@ const ImgWrapper = styled.div`
 
 const MainPage = () => {
   const location = useLocation()
-  if(location.pathname == "/ResumeWebsite"){
+  if(location.pathname == "/"){
     return (
       <div>
         <AppNavBar activeRoute={location.pathname}></AppNavBar>
