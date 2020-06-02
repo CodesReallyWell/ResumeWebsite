@@ -11,10 +11,10 @@ const App = () => {
     <div>
       <div>
         <BrowserRouter>
-          <Route path = "" render = {() => <MainPage></MainPage>}/>
-          <Route path = "/about" render = {() => <About></About>}/>
-          <Route path = "/projects" render = {() => <Projects></Projects>}/>
-          <Route path = "/contact" render = {() => <Contact></Contact>}/>
+          <Route path = "/ResumeWebsite" render = {() => <MainPage></MainPage>}/>
+          <Route path = "/ResumeWebsite/about" render = {() => <About></About>}/>
+          <Route path = "/ResumeWebsite/projects" render = {() => <Projects></Projects>}/>
+          <Route path = "/ResumeWebsite/contact" render = {() => <Contact></Contact>}/>
         </BrowserRouter>
       </div>
     </div>
