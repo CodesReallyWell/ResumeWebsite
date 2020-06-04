@@ -2,6 +2,7 @@ import React from "react"
 import { useLocation } from "react-router-dom"
 import AppNavBar from "../Components/AppNavBar"
 import styled from 'styled-components'
+import BouncingBall from '../Scripts/BouncingBall'
 
 const TextWrapper = styled.div`
   color: white;
@@ -22,6 +23,21 @@ const MainPage = () => {
     return (
       <div>
         <AppNavBar activeRoute={location.pathname}></AppNavBar>
+        <div>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+          <BouncingBall></BouncingBall>
+        </div>
       </div>
       );
   }else{

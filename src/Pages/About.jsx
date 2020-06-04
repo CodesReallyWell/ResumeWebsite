@@ -4,6 +4,9 @@ import { Container, Row, Col } from "react-bootstrap"
 
 
 const ImageWrapper = styled.img`
+  position: relative;
+  height: 30em;
+  top: 4em;
 `
 
 const TextWrapper = styled.div`
