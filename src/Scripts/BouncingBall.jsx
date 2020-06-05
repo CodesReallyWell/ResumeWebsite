@@ -17,7 +17,7 @@ const bounceTransition = {
     duration: 0,
     yoyo: Infinity,
     ease: "easeOut",
-    repeatDelay: 0.8
+    repeatDelay: .8
   }
 };
 
@@ -36,7 +36,8 @@ export default function BouncingBall() {
         style={ballStyle}
         transition={bounceTransition}
         animate={{
-          x: ["46vw", "-48vw"]
+          x: ["46vw", "-48vw"],
+          backgroundColor: ["#ff6699", "#6666ff"]
         }}
       />
     </div>

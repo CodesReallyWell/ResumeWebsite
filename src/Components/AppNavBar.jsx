@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 const NavBarWrap = styled.div`
   Background-color:linear-gradient(#fff, #000);
-  border-bottom: 1px solid #000012;
-  box-shadow: 0 4px 4px #000011;
+  border-bottom: 1px solid #000000;
+  box-shadow: 0 4px 4px #000000;
 `
 
 // if props.isActive is true it returns green
