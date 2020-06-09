@@ -2,23 +2,38 @@ import React from "react"
 import { useLocation } from "react-router-dom"
 import AppNavBar from "../Components/AppNavBar"
 import styled from 'styled-components'
+
+// For getting current heigh/width of browser windows
 import { useState, useEffect } from 'react';
+
+// For fancy main page text
+import TextTransition, { presets } from "react-text-transition";
 
 
 const Container = styled.div`
-  position: relative;
+  
 `
 
 const ImgWrapper = styled.img`
-  position: relative;
+  vertical-align: middle;
   width: 100%;
-`
-const TextWrapper = styled.div`
-  postion: relative;
-  text-align: center;
+  overflow: hidden;
 `
 
-function TestFunction(){
+const ImgWrapper2 = styled.img`
+  vertical-align: middle;
+  width: 100%;
+  overflow: hidden;
+`
+
+const TextWrapper = styled.p`
+  position: absolute;
+  top: 40vh;
+  font-weight: bold;
+  font-size: 400%;
+`
+
+function ScreenHeight(){
   const isClient = typeof window === 'object';
 
   function getSize() {
@@ -43,28 +58,76 @@ function TestFunction(){
     return () => window.removeEventListener('resize', handleResize);
 
   });
-  return <div>{windowSize.height}</div>
+  return windowSize
   
 }
 
 
-//<ImgWrapper src={require("../Data/HSPTG.jpg")} alt="duck"/>
+//<ImgWrapper2 src={require("../Data/HSPTG.jpg")} alt="duck"/>
+function FancyText(){
+
+  const HEADLINETEXT = [  
+    "Liam Newton",
+    "He kinda writes code"
+    ]
+  
+  // JS ew states
+  const [index, setIndex] = React.useState(0);
+  
+  // must clear interval at end of React.useEffect otherwise you get a massive memory leak
+  React.useEffect(() => {
+    const intervalId = setInterval(() =>
+      setIndex(index => index + 1),
+      5000 // every 5 seconds
+    )
+    return () => clearInterval(intervalId);
+  })
+
+  if(index >  1){
+    setIndex(index => 0)
+  }
+
+
+  return <TextTransition
+          text={ HEADLINETEXT[index % HEADLINETEXT.length] }
+          springConfig={ presets.slow }
+          />
+
+}
+
+//Current resolution: {windowSize.height-60}x{windowSize.width}&#10;
+//              Aspect Ratio: {windowSize.width/(windowSize.height-60)}
+
 
 const MainPage = () => {
   const location = useLocation()
+  const windowSize = ScreenHeight() 
+
   if(location.pathname == "/"){
-    return (
-      <Container>
-        <AppNavBar activeRoute={location.pathname}></AppNavBar>
-        <TextWrapper>
-           <TestFunction/>
-        </TextWrapper>
-      </Container>
-      );
+    if((windowSize.width/(windowSize.height-60)) < (6637/3787)){
+      return (
+        <Container>
+          <AppNavBar activeRoute={location.pathname}/>
+          <ImgWrapper2 src={require("../Data/HSPTG 1.jpg")} alt="duck"/>
+            <TextWrapper>
+              <FancyText/>
+            </TextWrapper>
+        </Container>
+        );
+    }else{
+      return (
+        <Container>
+          <AppNavBar activeRoute={location.pathname}/>
+          <ImgWrapper src={require("../Data/HSPTG.jpg")} alt="duck"/>
+          <TextWrapper>
+            <FancyText/>
+          </TextWrapper>
+        </Container>
+        );
+    }
   }else{
-    return(<AppNavBar activeRoute={location.pathname}></AppNavBar>)
+    return(<AppNavBar activeRoute={location.pathname}/>)
   }
-  
 }
 
 export default MainPage
