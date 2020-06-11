@@ -11,26 +11,32 @@ import TextTransition, { presets } from "react-text-transition";
 
 
 const Container = styled.div`
-  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
 `
 
 const ImgWrapper = styled.img`
-  vertical-align: middle;
+  position: static;
   width: 100%;
   overflow: hidden;
 `
 
-const ImgWrapper2 = styled.img`
-  vertical-align: middle;
-  width: 100%;
-  overflow: hidden;
-`
-
-const TextWrapper = styled.p`
+const TextWrapper = styled.div`
   position: absolute;
   top: 40vh;
   font-weight: bold;
   font-size: 400%;
+  letter-spacing: 15px;
+`
+
+const SmallScreenTextWrapper = styled.div`
+  position: absolute;
+  top: 40vh;
+  font-weight: bold;
+  font-size: 200%;
+  letter-spacing: 15px;
 `
 
 function ScreenHeight(){
@@ -67,8 +73,9 @@ function ScreenHeight(){
 function FancyText(){
 
   const HEADLINETEXT = [  
-    "Liam Newton",
-    "He kinda writes code"
+    "Big Money",
+    "Big Women",
+    "Small Peen"
     ]
   
   // JS ew states
@@ -83,14 +90,16 @@ function FancyText(){
     return () => clearInterval(intervalId);
   })
 
-  if(index >  1){
+  if(index >  2){
     setIndex(index => 0)
   }
 
 
   return <TextTransition
           text={ HEADLINETEXT[index % HEADLINETEXT.length] }
-          springConfig={ presets.slow }
+          spring={  presets.gentle  }
+          overflow
+          inline
           />
 
 }
@@ -106,23 +115,27 @@ const MainPage = () => {
   if(location.pathname == "/"){
     if((windowSize.width/(windowSize.height-60)) < (6637/3787)){
       return (
-        <Container>
+        <div>
           <AppNavBar activeRoute={location.pathname}/>
-          <ImgWrapper2 src={require("../Data/HSPTG 1.jpg")} alt="duck"/>
-            <TextWrapper>
-              <FancyText/>
-            </TextWrapper>
-        </Container>
+          <ImgWrapper src={require("../Data/HSPTG1LowRes.jpg")} alt="duck"/>
+          <Container>
+              <SmallScreenTextWrapper>
+                Liam Newton Has <FancyText/>
+              </SmallScreenTextWrapper>
+          </Container>
+        </div>
         );
     }else{
       return (
-        <Container>
+        <div>
           <AppNavBar activeRoute={location.pathname}/>
-          <ImgWrapper src={require("../Data/HSPTG.jpg")} alt="duck"/>
-          <TextWrapper>
-            <FancyText/>
-          </TextWrapper>
-        </Container>
+          <ImgWrapper src={require("../Data/HSPTGLowRes.jpg")} alt="duck"/>
+          <Container>
+              <TextWrapper>
+                Liam Newton Has <FancyText/>
+              </TextWrapper>
+          </Container>
+        </div>
         );
     }
   }else{
