@@ -68,6 +68,8 @@ function ScreenHeight(){
   
 }
 
+console.log("Code Changed")
+
 
 //<ImgWrapper2 src={require("../Data/HSPTG.jpg")} alt="duck"/>
 function FancyText(){
