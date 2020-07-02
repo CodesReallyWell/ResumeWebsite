@@ -1,5 +1,5 @@
 {
-  "homepage": "https://CodesReallyWell.github.io/ResumeWebsite",
+  "homepage": "http://liamnewton.tech/",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -14,11 +14,13 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
+    "react-hook-form": "^6.0.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-text-transition": "^1.1.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "telegram-send-message": "0.0.4"
   },
   "scripts": {
     "predeploy": "npm run build",

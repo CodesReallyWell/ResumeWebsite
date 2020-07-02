@@ -73,9 +73,9 @@ function ScreenHeight(){
 function FancyText(){
 
   const HEADLINETEXT = [  
-    "Big Money",
-    "Big Women",
-    "Small Peen"
+    "Codes",
+    "Develops",
+    "Fixes This Website"
     ]
   
   // JS ew states
@@ -120,7 +120,7 @@ const MainPage = () => {
           <ImgWrapper src={require("../Data/HSPTG1LowRes.jpg")} alt="duck"/>
           <Container>
               <SmallScreenTextWrapper>
-                Liam Newton Has <FancyText/>
+                Liam Newton <FancyText/>
               </SmallScreenTextWrapper>
           </Container>
         </div>
@@ -132,7 +132,7 @@ const MainPage = () => {
           <ImgWrapper src={require("../Data/HSPTGLowRes.jpg")} alt="duck"/>
           <Container>
               <TextWrapper>
-                Liam Newton Has <FancyText/>
+                Liam Newton <FancyText/>
               </TextWrapper>
           </Container>
         </div>
