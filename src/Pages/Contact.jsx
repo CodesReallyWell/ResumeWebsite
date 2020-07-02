@@ -45,8 +45,8 @@ const TextAreaWrapper = styled.textarea`
   margin: 1em;
 `
 
-Telegram.setToken("1140224579:AAHR3vKvzR7WjCVjknL7u1uMhFWUAnFxj8c")
-Telegram.setRecipient('-426807367')
+Telegram.setToken("")
+Telegram.setRecipient('')
 
 const Contact = () => {
   const {register, handleSubmit} = useForm()
