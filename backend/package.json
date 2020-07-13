@@ -14,7 +14,8 @@
     "koa-helmet": "^5.2.0",
     "koa-logger": "^3.2.1",
     "koa-respond": "^2.1.0",
-    "koa-router": "^9.1.0"
+    "koa-router": "^9.1.0",
+    "telegram-send-message": "0.0.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

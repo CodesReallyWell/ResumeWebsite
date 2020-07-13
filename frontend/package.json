@@ -1,6 +1,6 @@
 {
   "homepage": "http://liamnewton.tech/",
-  "name": "my-app",
+  "name": "liams-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,8 +19,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-text-transition": "^1.1.1",
-    "styled-components": "^5.1.1",
-    "telegram-send-message": "0.0.4"
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "predeploy": "npm run build",

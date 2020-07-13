@@ -12,6 +12,7 @@
     "build": "cd frontend && yarn build"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "concurrently": "^5.2.0"
   }
 }
