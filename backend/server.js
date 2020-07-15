@@ -12,10 +12,10 @@ const router = new Router()
 app.use(Helmet())
 
 if (process.env.NODE_ENV === 'development') {
-  app.use(Logger())
+  app.use(Logger()) // gooogle koa logger
 }
 
-app.use(Cors())
+app.use(Cors()) // cross origin request - google
 app.use(BodyParser({
   enableTypes: ['json'],
   jsonLimit: '5mb',

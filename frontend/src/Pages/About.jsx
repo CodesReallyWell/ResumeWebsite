@@ -12,8 +12,10 @@ const ImageWrapper = styled.img`
 const TextWrapper = styled.div`
   position: relative;
   box-shadow: 10px 5px 12px black;
+  padding: 1.5em;
   top: 4em;
   bottom: 15em; 
+  margin: auto;
 `
 
 const About = () => {
@@ -21,10 +23,9 @@ const About = () => {
     <div>
       <Container>
         <Row lg={8}>
-        <Col lg={8}>
-          <ImageWrapper src={require("../Data/MyFace1.png")} alt="duck"/>
-        </Col>
+        <Col lg={12}/>
         <Col>
+          <ImageWrapper src={require("../Data/MyFace1.png")} alt="duck"/>
           <TextWrapper>
             <h1>About Me</h1>
             I am a passionate programmer who is always searching to learn new things.
