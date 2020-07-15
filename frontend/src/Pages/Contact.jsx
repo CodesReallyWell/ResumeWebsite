@@ -46,7 +46,7 @@ const ButtonBoi=styled.input`
   color: #ffffff;
   font-size: 96%;
   padding: 15px;
-  background-color: #282828;
+  background-color: ${props => props.buttonColor};
   border: 1px solid #1d2124;
   border-radius: 20px;
   border-bottom: 1px solid #282828;
@@ -120,6 +120,19 @@ const Contact = () => {
     }
   }
 
+  // For changing button color on hover :)
+  // on mouse out sets hovered to false so it always goes to original color
+  const ChangeButton = () =>{
+    const[hovered, setHovered] = useState(false)
+
+    if(hovered){
+      return <ButtonBoi buttonColor='blue' onMouseOver={() => setHovered(false)} onMouseOut={() => setHovered(false)} type="Submit" placeholder="Submit"/>
+    }else{
+      return <ButtonBoi buttonColor='#282828' onMouseOver={() => setHovered(true)} onMouseOut={() => setHovered(false)} type="Submit" placeholder="Submit"/>
+    }
+  }
+
+
   return (
     <Contain>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -130,7 +143,7 @@ const Contact = () => {
         <br/>
         <TextAreaWrapper ref={register} name="Message" placeholder="Message" type="Message" rows="5"/>
         <br/>
-        <ButtonBoi type="Submit" placeholder="Submit"/>
+        <ChangeButton/>
         <br/>
         <SubmitStatus statusMessage={msg} errMsg={errThing}/>
       </form>
