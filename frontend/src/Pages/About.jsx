@@ -26,9 +26,12 @@ const OneIndentP = styled.p`
   margin-left: 1em
 `
 
+const Wrapper = styled.div`
+`
+
 const About = () => {
   return (
-    <div>
+    <Wrapper>
       <Container>
         <Row lg={8}>
         <Col sm={1}/>
@@ -57,7 +60,7 @@ const About = () => {
         </Col>
         </Row>
       </Container>
-    </div>
+    </Wrapper>
   )
 }
 

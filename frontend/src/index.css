@@ -6,8 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: azure;
-  background-image: linear-gradient(to right top, #282828, #2c2a3b, #2d2c4f, #2b2f64, #243179, #3e2e82, #582687, #721689, #9b0072, #b60054, #c30031, #c20000);
-  height: 100vh;
+  max-height: 100%;
+  background-image: repeating-linear-gradient(to right top, #282828, #2c2a3b, #2d2c4f, #2b2f64, #243179, #3e2e82, #582687, #721689, #9b0072, #b60054, #c30031, #c20000);
+  background-attachment: fixed;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
