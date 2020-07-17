@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import About from './Pages/About'
-import Projects from './Pages/Projects'
+import ProjectOne from './Pages/Project1'
 import MainPage from './Pages/MainPage'
 import Contact from './Pages/Contact'
 import { BrowserRouter, Route } from 'react-router-dom'
@@ -13,7 +13,7 @@ const App = () => {
       <BrowserRouter>
         <Route path = "/" render = {() => <MainPage></MainPage>}/>
         <Route path = "/about" render = {() => <About></About>}/>
-        <Route path = "/projects" render = {() => <Projects></Projects>}/>
+        <Route path = "/project/1" render = {() => <ProjectOne></ProjectOne>}/>
         <Route path = "/contact" render = {() => <Contact></Contact>}/>
       </BrowserRouter>
     </div>

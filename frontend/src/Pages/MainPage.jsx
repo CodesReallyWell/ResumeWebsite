@@ -114,7 +114,7 @@ const MainPage = () => {
   const location = useLocation()
   const windowSize = ScreenHeight() 
 
-  if(location.pathname == "/"){
+  if(location.pathname === "/"){
     if((windowSize.width/(windowSize.height-60)) < (6637/3787)){
       return (
         <div>

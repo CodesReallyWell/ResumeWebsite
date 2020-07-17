@@ -18,18 +18,41 @@ const TextWrapper = styled.div`
   margin: auto;
 `
 
+const TwoIndentP = styled.p`
+  margin-left: 2em
+`
+
+const OneIndentP = styled.p`
+  margin-left: 1em
+`
+
 const About = () => {
   return (
     <div>
       <Container>
         <Row lg={8}>
-        <Col lg={12}/>
+        <Col sm={1}/>
         <Col>
           <ImageWrapper src={require("../Data/MyFace1.png")} alt="duck"/>
+        </Col>
+        <Col>
+        
           <TextWrapper>
             <h1>About Me</h1>
-            I am a passionate programmer who is always searching to learn new things.
-            Bear with the mess around here; the website is currently being built.
+            <OneIndentP>
+              I am a passionate programmer from Austin, Texas with experience in JavaScript, HTML, PowerShell and more!<br/>
+              <br/>
+              Bear with the mess around here; the website is currently being built.
+            </OneIndentP>
+            <br/>
+            <h1>Education</h1>
+            <OneIndentP>
+              Bachelor of Science in Computer Science<br/>
+              <TwoIndentP>
+                Texas Tech University, Lubbock, TX<br/>
+                Graduation date: December 2019
+              </TwoIndentP>
+            </OneIndentP>
           </TextWrapper>
         </Col>
         </Row>

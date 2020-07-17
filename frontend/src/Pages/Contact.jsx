@@ -47,9 +47,8 @@ const ButtonBoi=styled.input`
   font-size: 96%;
   padding: 15px;
   background-color: ${props => props.buttonColor};
-  border: 1px solid #1d2124;
+  border: 2px solid ${props => props.borderColor};
   border-radius: 20px;
-  border-bottom: 1px solid #282828;
   cursor: pointer;
   width: 58%;
   box-shadow: 6px 4px 11px 2px rgba(0, 0, 0, 0.5);
@@ -77,6 +76,10 @@ const Contact = () => {
 
   // For error code
   const [errThing, setError] = useState("")
+
+
+  // test
+  const[clicked, setClicked] = useState(false)
   
   const onSubmit = data => {
     // make post request with axios
@@ -100,7 +103,7 @@ const Contact = () => {
   const SubmitStatus = (props) => {
     const [show, setShow] = useState(true)
     
-    if(props.statusMessage == 200 && show){
+    if(props.statusMessage === 200 && show){
       return (
               <AlertingWrapper inputColor='green'>
                 <Alert onClose={() => setShow(false)} dismissible>
@@ -122,13 +125,35 @@ const Contact = () => {
 
   // For changing button color on hover :)
   // on mouse out sets hovered to false so it always goes to original color
-  const ChangeButton = () =>{
+  const ChangeButton = (props) =>{
     const[hovered, setHovered] = useState(false)
+    console.log(clicked)
 
     if(hovered){
-      return <ButtonBoi buttonColor='blue' onMouseOver={() => setHovered(false)} onMouseOut={() => setHovered(false)} type="Submit" placeholder="Submit"/>
+      return (<ButtonBoi buttonColor='#1d2951' type="Submit" placeholder="Submit" borderColor="green"
+                         onMouseOver={() => setHovered(false)} 
+                         onMouseOut={() => setHovered(false)}
+                         />)
+
+    }else if (clicked && props.errMsg.message == null){
+      return (<ButtonBoi buttonColor='#1d2951' type="Submit" placeholder="Submit" borderColor="green"
+                         onMouseOver={() => setHovered(false)} 
+                         onMouseOut={() => setHovered(false)} 
+                        />)
+    
+    }else if(!hovered && props.errMsg.message == null){
+      return (<ButtonBoi buttonColor='#282828' type="Submit" placeholder="Submit" borderColor="#282828"
+                         onMouseOver={() => setHovered(true)} 
+                         onMouseOut={() => setHovered(false)} 
+                         />)
+
+    }else if(props.errMsg.message != null){
+      return (<ButtonBoi buttonColor='#282828' type="Submit" placeholder="Submit" borderColor="red"
+                         onMouseOver={() => setHovered(true)} 
+                         onMouseOut={() => setHovered(false)}
+                         />)
     }else{
-      return <ButtonBoi buttonColor='#282828' onMouseOver={() => setHovered(true)} onMouseOut={() => setHovered(false)} type="Submit" placeholder="Submit"/>
+      return null
     }
   }
 
@@ -143,7 +168,7 @@ const Contact = () => {
         <br/>
         <TextAreaWrapper ref={register} name="Message" placeholder="Message" type="Message" rows="5"/>
         <br/>
-        <ChangeButton/>
+        <ChangeButton errMsg={errThing}/>
         <br/>
         <SubmitStatus statusMessage={msg} errMsg={errThing}/>
       </form>

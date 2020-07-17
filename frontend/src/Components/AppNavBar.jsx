@@ -35,16 +35,13 @@ const AppNavBar = (props) => {
             <Nav.Link className="app-nav-link" href="/about">
               <NavLinkText isActive={isActiveRoute("/about")}>About</NavLinkText>
             </Nav.Link>
-            <Nav.Link className="app-nav-link" href="/projects">
-              <NavLinkText isActive={isActiveRoute("/projects")}>Projects</NavLinkText>
-            </Nav.Link>
             <Nav.Link className="app-nav-link" href="/contact">
               <NavLinkText isActive={isActiveRoute("/contact")}>Contact</NavLinkText>
             </Nav.Link>
           </Nav>
           <Nav className = "mr-auto">
-            <NavDropdown title="For Later" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/action/3.1">Something</NavDropdown.Item>
+            <NavDropdown title="Projecs" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="/project/1">Data Mining</NavDropdown.Item>
               <NavDropdown.Item href="/action/3.2">Something</NavDropdown.Item>
               <NavDropdown.Item href="/action/3.3">Something</NavDropdown.Item>
             </NavDropdown>
