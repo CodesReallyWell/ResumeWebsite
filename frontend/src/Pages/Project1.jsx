@@ -1,6 +1,4 @@
 import React from "react"
-import { useLocation } from "react-router-dom"
-import AppNavBar from "../Components/AppNavBar"
 import styled from 'styled-components'
 
 const TextWrapper = styled.div`

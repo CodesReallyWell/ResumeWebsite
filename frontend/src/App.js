@@ -13,7 +13,7 @@ const App = () => {
       <BrowserRouter>
         <Route path = "/" render = {() => <MainPage></MainPage>}/>
         <Route path = "/about" render = {() => <About></About>}/>
-        <Route path = "/project/1" render = {() => <ProjectOne></ProjectOne>}/>
+        <Route path = "/projectOne" render = {() => <ProjectOne></ProjectOne>}/>
         <Route path = "/contact" render = {() => <Contact></Contact>}/>
       </BrowserRouter>
     </div>

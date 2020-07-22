@@ -41,7 +41,7 @@ const AppNavBar = (props) => {
           </Nav>
           <Nav className = "mr-auto">
             <NavDropdown title="Projecs" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/project/1">Data Mining</NavDropdown.Item>
+              <NavDropdown.Item href="/projectOne">Data Mining</NavDropdown.Item>
               <NavDropdown.Item href="/action/3.2">Something</NavDropdown.Item>
               <NavDropdown.Item href="/action/3.3">Something</NavDropdown.Item>
             </NavDropdown>
