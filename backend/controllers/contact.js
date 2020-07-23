@@ -8,7 +8,7 @@ async function sendTelegram (ctx, next) {
 
 
   var spawn = require("child_process").spawn,child;
-  child = spawn("pwsh.exe",["C:\\Users\\Liam\\Documents\\PersonalProjects\\ScriptForWebsite\\scriptForWebsite.ps1", '-message', message]);
+  child = spawn("pwsh",["/home/liam/Documents/ResumeWebsite/backend/controllers/scriptForWebsite.ps1", '-message', message]);
   child.stdout.on("data",function(data){
   console.log("Powershell Data: " + data);
   });
