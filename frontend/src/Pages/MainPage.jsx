@@ -20,23 +20,28 @@ const Container = styled.div`
 const ImgWrapper = styled.img`
   position: static;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
 `
 
 const TextWrapper = styled.div`
   position: absolute;
   top: 40vh;
   font-weight: bold;
-  font-size: 400%;
+  font-size: 3em;
+  text-shadow: 2px 2px #282828;
   letter-spacing: 15px;
+  margin: auto;
 `
 
 const SmallScreenTextWrapper = styled.div`
   position: absolute;
   top: 40vh;
   font-weight: bold;
-  font-size: 200%;
-  letter-spacing: 15px;
+  font-size: 1.2em;
+  text-shadow: 2px 2px #282828;
+  letter-spacing: .5em;
+  padding: 1em;
+  margin: auto;
 `
 
 function ScreenHeight(){
@@ -75,9 +80,9 @@ console.log("Code Changed")
 function FancyText(){
 
   const HEADLINETEXT = [  
-    "Codes",
-    "Develops",
-    "Fixes This Website"
+    " Codes",
+    " Develops",
+    " Programs"
     ]
   
   // JS ew states
@@ -119,24 +124,24 @@ const MainPage = () => {
       return (
         <div>
           <AppNavBar activeRoute={location.pathname}/>
-          <ImgWrapper src={require("../Data/HSPTG1LowRes.jpg")} alt="duck"/>
           <Container>
-              <SmallScreenTextWrapper>
-                Liam Newton <FancyText/>
-              </SmallScreenTextWrapper>
+            <SmallScreenTextWrapper>
+              Liam Newton <FancyText/>
+            </SmallScreenTextWrapper>
           </Container>
+          <ImgWrapper src={require("../Data/HSPTG1LowRes.jpg")} alt="duck"/>
         </div>
         );
     }else{
       return (
         <div>
           <AppNavBar activeRoute={location.pathname}/>
-          <ImgWrapper src={require("../Data/HSPTGLowRes.jpg")} alt="duck"/>
           <Container>
               <TextWrapper>
                 Liam Newton <FancyText/>
               </TextWrapper>
           </Container>
+          <ImgWrapper src={require("../Data/HSPTGLowRes.jpg")} alt="duck"/>
         </div>
         );
     }

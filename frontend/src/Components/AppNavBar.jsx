@@ -13,6 +13,11 @@ const NavLinkText = styled.span`
   color: ${props => props.isActive && 'red'};
 `
 
+const NavTest = styled.span`
+  color: blue;
+`
+
+
 // isActive :: String -> String -> Boolean
 // isActive is a function that takes a string returns a function
 // that takes a string that returns a boolean
@@ -41,9 +46,9 @@ const AppNavBar = (props) => {
           </Nav>
           <Nav className = "mr-auto">
             <NavDropdown title="Projecs" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/projectOne">Data Mining</NavDropdown.Item>
-              <NavDropdown.Item href="/action/3.2">Something</NavDropdown.Item>
-              <NavDropdown.Item href="/action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Item href="/projectOne">Data Mining</NavDropdown.Item>
+                <NavDropdown.Item href="/projectTwo">N/A</NavDropdown.Item>
+                <NavDropdown.Item href="/projectThree">N/A</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           </Navbar.Collapse>

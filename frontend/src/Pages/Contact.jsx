@@ -84,7 +84,7 @@ const Contact = () => {
   const onSubmit = data => {
     // make post request with axios
     // request path is /contact
-    axios.post('http://82.15.156.40:4000/contact',{
+    axios.post('http://texanwebhosting.co.uk:4000/contact',{
       data: {
         name    : data.Name,
         email   : data.Email,

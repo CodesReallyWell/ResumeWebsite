@@ -39,20 +39,33 @@ const FigTextWrap = styled.figcaption`
   font-size: small;
 `
 
+const GithubLinkImgWrap=styled.img`
+  width: 1.3em;
+  padding: .3em;
+`
+const IntroP = styled.div`
+  background: #cccccc20;
+  padding: 1em;
+`
 
 const ProjectOne = () => {
   return (
     <TextWrapper>
       <HeaderWrap>
-        <Link href="https://github.com/CodesReallyWell/CryptoProject">Social Media Influence on Ethereum Value</Link>
+        Social Media Influence on Ethereum Value
+        <a href="https://github.com/CodesReallyWell/CryptoProject">
+          <GithubLinkImgWrap src="https://logodix.com/logo/64439.png"/>
+        </a>
       </HeaderWrap>
       <DWrap>
-        <h2>Abstract</h2>
-        With Cryptocurrencies high return and volatility it is an important topic of discussion on forums 
-        like Reddit. In this social media study, we will use sentiment analysis, Granger causality, and 
-        Naive Bayes to determine a relation between positive comments and Cryptocurrency value. Since 
-        there are so many types of Cryptocurrencies, we have decided to focus on one, Ethereum. Ethereum 
-        is an open-source, public, blockchain-based distributed computing platform and operating system.
+        <IntroP>
+          <h2>Abstract</h2>
+          With Cryptocurrencies high return and volatility it is an important topic of discussion on forums 
+          like Reddit. In this social media study, we will use sentiment analysis, Granger causality, and 
+          Naive Bayes to determine a relation between positive comments and Cryptocurrency value. Since 
+          there are so many types of Cryptocurrencies, we have decided to focus on one, Ethereum. Ethereum 
+          is an open-source, public, blockchain-based distributed computing platform and operating system.
+        </IntroP>
         <br/><br/>
         <h2>Methodology and experimental design</h2>
         Data was collected within the time frame of  May 2017 to July 2017. The data includes 
