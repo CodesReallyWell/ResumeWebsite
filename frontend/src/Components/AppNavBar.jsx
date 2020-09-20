@@ -16,7 +16,15 @@ const NavLinkText = styled.span`
 const NavTest = styled.span`
   color: blue;
 `
-
+/* If I ever want to add a drop down will add this
+<Nav className = "mr-auto">
+  <NavDropdown title="Projects" id="collasible-nav-dropdown">
+      <NavDropdown.Item href="/projectOne">Data Mining</NavDropdown.Item>
+      <NavDropdown.Item href="/projectTwo">N/A</NavDropdown.Item>
+      <NavDropdown.Item href="/projectThree">N/A</NavDropdown.Item>
+  </NavDropdown>
+</Nav>
+*/
 
 // isActive :: String -> String -> Boolean
 // isActive is a function that takes a string returns a function
@@ -43,13 +51,9 @@ const AppNavBar = (props) => {
             <Nav.Link className="app-nav-link" href="/contact">
               <NavLinkText isActive={isActiveRoute("/contact")}>Contact</NavLinkText>
             </Nav.Link>
-          </Nav>
-          <Nav className = "mr-auto">
-            <NavDropdown title="Projecs" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/projectOne">Data Mining</NavDropdown.Item>
-                <NavDropdown.Item href="/projectTwo">N/A</NavDropdown.Item>
-                <NavDropdown.Item href="/projectThree">N/A</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link className="app-nav-link" href="/projectOne">
+              <NavLinkText isActive={isActiveRoute("/projectOne")}>Data Mining</NavLinkText>
+            </Nav.Link>
           </Nav>
           </Navbar.Collapse>
       </Navbar>

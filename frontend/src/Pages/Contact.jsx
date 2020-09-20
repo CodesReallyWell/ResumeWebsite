@@ -69,7 +69,14 @@ const AlertingWrapper=styled.div`
 `
 
 const Contact = () => {
-  const {register, handleSubmit} = useForm()
+  const {register, handleSubmit, unregister} = useForm({
+    defaultValues: {
+      Name: "",
+      Email: "",
+      Message: ""
+    }
+  })
+
 
   // For HTTP status code
   const [msg, setMessage] = useState(0)
@@ -104,6 +111,9 @@ const Contact = () => {
     const [show, setShow] = useState(true)
     
     if(props.statusMessage === 200 && show){
+      unregister("Message")
+      unregister("Name")
+      unregister("Email")
       return (
               <AlertingWrapper inputColor='green'>
                 <Alert onClose={() => setShow(false)} dismissible>
@@ -127,7 +137,6 @@ const Contact = () => {
   // on mouse out sets hovered to false so it always goes to original color
   const ChangeButton = (props) =>{
     const[hovered, setHovered] = useState(false)
-    console.log(clicked)
 
     if(hovered){
       return (<ButtonBoi buttonColor='#1d2951' type="Submit" placeholder="Submit" borderColor="green"
@@ -162,11 +171,11 @@ const Contact = () => {
     <Contain>
       <form onSubmit={handleSubmit(onSubmit)}>
         <H1Wrap>Contact Me</H1Wrap>
-        <Input ref={register} name="Name" placeholder="Name" type="text"/>
+        <Input ref={register({required: true})} name="Name" placeholder="Name" type="text"/>
         <br/>
-        <Input ref={register} name="Email"  placeholder="Email" type="Email"/>
+        <Input ref={register({required: true})} name="Email"  placeholder="Email" type="Email"/>
         <br/>
-        <TextAreaWrapper ref={register} name="Message" placeholder="Message" type="Message" rows="5"/>
+        <TextAreaWrapper ref={register({required: true})} name="Message" placeholder="Message" type="Message" rows="5"/>
         <br/>
         <ChangeButton errMsg={errThing}/>
         <br/>
