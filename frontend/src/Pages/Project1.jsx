@@ -6,10 +6,6 @@ const TextWrapper = styled.div`
   max-width: 1000px;
 `
 
-const Link = styled.a`
- color: white;
-`
-
 const HeaderWrap = styled.h1`
   padding: 1em;
   text-align: center;

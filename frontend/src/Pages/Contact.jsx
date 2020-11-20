@@ -91,7 +91,7 @@ const Contact = () => {
   const onSubmit = data => {
     // make post request with axios
     // request path is /contact
-    axios.post('http://texanwebhosting.co.uk:4000/contact',{
+    axios.post('http://10.10.1.84:4000/contact',{
       data: {
         name    : data.Name,
         email   : data.Email,
@@ -105,15 +105,16 @@ const Contact = () => {
         setError(error)
       })
 
+      unregister("Message")
+      unregister("Name")
+      unregister("Email")
+
   }
 
   const SubmitStatus = (props) => {
     const [show, setShow] = useState(true)
     
     if(props.statusMessage === 200 && show){
-      unregister("Message")
-      unregister("Name")
-      unregister("Email")
       return (
               <AlertingWrapper inputColor='green'>
                 <Alert onClose={() => setShow(false)} dismissible>
@@ -123,7 +124,7 @@ const Contact = () => {
     }else if (props.errMsg.message != null && show){
       return (
             <AlertingWrapper inputColor='red'>
-              <Alert onClose={() => setShow(false)} dismissible>
+              <Alert onClose={() => setShow(true)} dismissible>
                 <Alert.Heading>Uh Oh, It Broke</Alert.Heading>
                 <p>{props.errMsg.message}</p>
               </Alert>

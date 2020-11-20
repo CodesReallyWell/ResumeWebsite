@@ -1,4 +1,19 @@
+const dotenv = require("dotenv").config({path: '../backend/.env'})
+
+function envVarManager(){
+  const key = process.env.TELEGRAM_KEY
+  const id = process.env.CHAT_ID
+
+  envVars = {
+    key : key,
+    id  : id
+  }
+
+  return envVars
+}
+
 async function sendTelegram (ctx, next) {
+
   const data = ctx.request.body
   
   var contactInfo = JSON.parse(JSON.stringify(data))
@@ -6,19 +21,16 @@ async function sendTelegram (ctx, next) {
                  '\nEmail: ' + contactInfo.data.email +
                  '\nMessage: ' + contactInfo.data.message)
 
+  envVars = envVarManager()
 
-  var spawn = require("child_process").spawn,child;
-  child = spawn("pwsh",["/home/liam/Documents/ResumeWebsite/backend/controllers/scriptForWebsite.ps1", '-message', message]);
-  child.stdout.on("data",function(data){
-  console.log("Powershell Data: " + data);
-  });
-  child.stderr.on("data",function(data){
-      console.log("Powershell Errors: " + data);
-  });
-  child.on("exit",function(){
-      console.log("Powershell Script finished");
-  });
-  child.stdin.end(); //end input
+  // Telegrambot logic here
+  var TelegramBot = require('telegrambot')
+  var api = new TelegramBot(envVars.key)
+
+  api.invoke('sendMessage', { chat_id: envVars.id, text: message }, function (err, errmessage) {
+    if (err) throw err;
+    console.log(errmessage);
+})
 
   ctx.response.status = 200;
 
