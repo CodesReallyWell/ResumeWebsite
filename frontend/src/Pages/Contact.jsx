@@ -91,7 +91,7 @@ const Contact = () => {
   const onSubmit = data => {
     // make post request with axios
     // request path is /contact
-    axios.post('http://10.10.1.84:4000/contact',{
+    axios.post('https://backend.liamnewton.tech:4000/contact',{
       data: {
         name    : data.Name,
         email   : data.Email,

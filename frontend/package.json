@@ -26,7 +26,7 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "rm -rf ./build && react-scripts build && rm -rf ../backend/build && mv ./build ../backend/build",
-    "proxy": "http://localhost:4000",
+    "proxy": "https://backend.liamnewton.tech:4000",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
